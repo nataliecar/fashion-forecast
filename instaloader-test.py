@@ -2,6 +2,7 @@ from datetime import datetime
 from itertools import dropwhile, takewhile
 
 import instaloader
+from instaloader import Profile
 
 L = instaloader.Instaloader()
 L.interactive_login('natalierc_') 
