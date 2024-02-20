@@ -1,0 +1,6 @@
+Important Links:
+
+https://pjreddie.com/darknet/yolo/
+https://modelzoo.co/model/detectron2
+https://modelzoo.co/model/mask-r-cnn-keras
+
