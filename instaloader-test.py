@@ -1,21 +1,18 @@
-import numpy as np
-import pandas as pd
-import instaloader
-from instaloader import Profile
+from datetime import datetime
+from itertools import dropwhile, takewhile
 
-# Get instance
+import instaloader
 
 L = instaloader.Instaloader()
-L.interactive_login('natalierc_')
+L.interactive_login('natalierc_') 
+print('hello1')
+posts = instaloader.Profile.from_username(L.context, "voguemagazine").get_posts()
+print('hello2')
 
-#p = L.download_profiles(profile)
+SINCE = datetime(2023, 1, 1)
+UNTIL = datetime(2024, 1, 1)
 
-profile = Profile.from_username(L.context, 'voguemagazine')
-data = {}
-post_arr = np.array()
-for post in profile.get_posts():
-    post_arr.append(post)
-data[profile.username] = post_arr
-
-print(post_arr[0])
-#df = pd.DataFrame(profile_arr, columns=['profile_name', ])
+print('started')
+for post in takewhile(lambda p: p.date > UNTIL, dropwhile(lambda p: p.date > SINCE, posts)):
+    print(post.date)
+    L.download_post(post, "voguemagazine")
