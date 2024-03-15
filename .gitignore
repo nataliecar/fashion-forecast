@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 runs/
 SFS_metadata_new.csv
+SFS_metadata_new2.csv
+style_stats.csv
