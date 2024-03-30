@@ -159,6 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 runs/
+yolov5/
 SFS_metadata_new.csv
 SFS_metadata_new2.csv
 style_stats.csv
